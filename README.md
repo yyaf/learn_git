@@ -48,22 +48,26 @@ git push -u origin master # 把本地内容推送到远程仓库上。 `-u`:设�
 
 1. 本地分支重命名（未推送到远程）
 
-```git
-git branch -m old_name new_name
-```
+    ```git
+    git branch -m old_name new_name
+    ```
 
 2. 远程分支重命名（已推送远程，假设本地分支与远程分支名称相同）
 
-```git
-git branch -m old_name new_name
-# 1.从命名对应的本地分支
+    ```git
+    git branch -m old_name new_name
+    # 1.从命名对应的本地分支
 
-git push --delete origin old_name
-# 2.删除远程分支
+    git push --delete origin old_name
+    # 2.删除远程分支（主分支默认受保护无法删除，需要把主分支切换为其他分支）
 
-git push origin new_name
-# 3.上传新命名的本地分支
+    git push origin new_name
+    # 03.上传新命名的本地分支
+    git branch --set-upstream-to origin/new_name
+    # 04.把修改后分支设置为上游起点分支
 
-gir branch --set-upstream-to origin/new_name
-# 4.把修改后分支设置为上游起点分支
-```
+    or
+
+    git push -u origin new_name
+    # 3.上传新命名的本地分支并设置为上有分支
+    ```
