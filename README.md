@@ -2,24 +2,24 @@
 
 ## 远程仓库
 
-第一步，创建SSH Key。在用户目录下看看有没有.ssh目录，如果有，再看看这个目录下有没有`id_rsa`和`id_rsa.pub`这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
+1. 创建SSH Key。在用户目录下看看有没有.ssh目录，如果有，再看看这个目录下有没有`id_rsa`和`id_rsa.pub`这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
 
-```ssh
-ssh-keygen -t rsa -C "youremail@example.com"
-```
+    ```ssh
+    ssh-keygen -t rsa -C "youremail@example.com"
+    ```
 
-一路回车，使用默认值即可，需要调整可以自行调整。
+    一路回车，使用默认值即可，需要调整可以自行调整。
 
-一切顺利的话，可以在用户主目录里找到`.ssh`目录，里面有`id_rsa`和`id_rsa.pub`两个文件，这两个就是SSH Key的秘钥对，`id_rsa`是私钥，不能泄露出去，`id_rsa.pub`是公钥，可以放心地告诉任何人。
+    一切顺利的话，可以在用户主目录里找到`.ssh`目录，里面有`id_rsa`和`id_rsa.pub`两个文件，这两个就是SSH Key的秘钥对，`id_rsa`是私钥，不能泄露出去，`id_rsa.pub`是公钥，可以放心地告诉任何人。
 
-第二步，登录Github，打开“Account settings” -- ”SSH and GPG keys“ -- “SSH Keys”页面：新建一个SSH Key，把`id_rsa.pub`的内容填上。
+2. 登录Github，打开“Account settings” -- ”SSH and GPG keys“ -- “SSH Keys”页面：新建一个SSH Key，把`id_rsa.pub`的内容填上。
 
-第三步，运行
+3. 运行
 
-```git
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
-```
+    ```git
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
+    ```
 
 ## 创建版本库
 
