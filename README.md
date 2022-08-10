@@ -2,13 +2,11 @@
 
 ## 远程仓库
 
-常见错误：
+> 常见错误：
     1. Failed to connect to github.com port 443: connection refused.
     
     本地有连接vpn，通过在终端输入以下命令解决：
-    ```ssh
     git config --global http.proxy http://127.0.0.1:7890
-    ```
     说明：7890为本地混合配置的端口号
 
 1. 创建SSH Key。在用户目录下看看有没有.ssh目录，如果有，再看看这个目录下有没有`id_rsa`和`id_rsa.pub`这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
